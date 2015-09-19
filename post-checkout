@@ -1,0 +1,13 @@
+#!/usr/bin/php
+<?php
+
+chdir(dirname(__FILE__));
+
+if(file_exists('app/Mage.php')) require 'app/Mage.php';
+else require '../../app/Mage.php';
+
+Mage::app();
+
+Mage::getModel('core/cache')->flush();
+
+echo "Flushed all Magento cache.\n";
